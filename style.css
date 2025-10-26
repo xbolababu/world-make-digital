@@ -1,0 +1,67 @@
+/* Service box animation (on scroll/appear) */
+.service-box {
+  background: rgba(255,255,255,0.1);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s forwards;
+}
+
+.service-box:nth-child(1) { animation-delay: 0.2s; }
+.service-box:nth-child(2) { animation-delay: 0.4s; }
+.service-box:nth-child(3) { animation-delay: 0.6s; }
+.service-box:nth-child(4) { animation-delay: 0.8s; }
+.service-box:nth-child(5) { animation-delay: 1s; }
+.service-box:nth-child(6) { animation-delay: 1.2s; }
+.service-box:nth-child(7) { animation-delay: 1.4s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover effect */
+.service-box:hover {
+  transform: scale(1.05) rotate(1deg);
+  box-shadow: 0 0 20px rgba(255, 204, 0, 0.6);
+}
+
+/* Nav buttons hover underline slide effect */
+nav button {
+  position: relative;
+  overflow: hidden;
+}
+nav button::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -3px;
+  background: #ffcc00;
+  transition: width 0.3s;
+}
+nav button:hover::after {
+  width: 100%;
+}
+
+/* Contact links glow animation */
+#contact a {
+  display: inline-block;
+  margin: 8px 0;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.3s;
+}
+#contact a:hover {
+  background: rgba(255,255,255,0.1);
+  box-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00;
+  transform: scale(1.05);
+}
